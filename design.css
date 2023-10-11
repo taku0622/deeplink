@@ -1,0 +1,33 @@
+.outer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  background-color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: black;
+}
+.top h1{
+  padding: 225px;
+  font-size:100px;
+}
+.why h1{
+  font-size: 50px;
+  padding-top: 70px;
+}
+.why h2{
+  padding:20px
+}
+.why {
+  font-size: 20px;
+}
+.about_me h1{
+  font-size: 50px;
+  padding-top: 70px;
+}
+.about_me {
+  font-size: 20px;
+}
+
