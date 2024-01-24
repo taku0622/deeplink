@@ -4,7 +4,7 @@ const handleIOSDeepLink = () => {
     window.close();
     return;
   }
-  const openedApp = window.open('https://apps.apple.com/jp/app/secom-sights/id6463053242', '_blank');
+  const openedApp = window.open('https://view.secomsights.com/login', '_blank');
   const checkAppInForeground = () => {
     if (document.hidden) {
       // Show App Store by URL
