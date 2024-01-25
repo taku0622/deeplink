@@ -10,12 +10,12 @@ const handleIOSDeepLink = () => {
   // 
   if (browser.name === 'Mobile Safari') {
     // リンクをクリック
-    window.open('https://deeplink-ashy.vercel.app/', "_blank");
+    location.href = 'https://deeplink-ashy.vercel.app/';
     // local.hrefを確認
     setInterval(() => {
       console.log(hello);
       if (location.href === 'https://deeplink-ashy.vercel.app/') {
-        window.close();
+        location.href = 'https://apps.apple.com/jp/app/secom-sights/id6463053242';
       }
     }, 1000);
     return
