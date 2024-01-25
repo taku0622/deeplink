@@ -10,7 +10,7 @@ const handleIOSDeepLink = () => {
   // 
   if (browser.name === 'Mobile Safari') {
     // リンクをクリック
-    window.open('https://deeplink-ashy.vercel.app/', _blank);
+    window.open('https://deeplink-ashy.vercel.app/', "_blank");
     // local.hrefを確認
     setInterval(() => {
       console.log(hello);
