@@ -1,3 +1,5 @@
+console.log(UAParser)
+
 const handleIOSDeepLink = () => {
   if (window.opener) {
     // Check if the page was opened by another app (e.g. Gmail, Teams)
