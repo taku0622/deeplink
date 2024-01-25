@@ -14,9 +14,11 @@ const handleIOSDeepLink = () => {
     var url = "https://deeplink-ashy.vercel.app/";
     if (!window.open(url)) {
       location.href = url;
+      alert('パターン1');
     } else {
       location.href = url;
       $('#open_form').submit();
+      alert('パターン2');
     }
     // // local.hrefを確認
     // setInterval(() => {
