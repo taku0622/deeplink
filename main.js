@@ -7,6 +7,12 @@ const browser = ua.getBrowser();
 console.log(browser);
 
 const handleIOSDeepLink = () => {
+  // 
+  if (ua.browser.name === 'Mobile Safari') {
+    alert('Mobile Safari!!');
+    return
+  }
+  // 
   if (window.opener) {
     // Check if the page was opened by another app (e.g. Gmail, Teams)
     window.close();
