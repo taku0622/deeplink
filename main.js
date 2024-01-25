@@ -9,7 +9,15 @@ console.log(browser.name);
 const handleIOSDeepLink = () => {
   // 
   if (browser.name === 'Mobile Safari') {
-    alert('Mobile Safari!!');
+    // リンクをクリック
+    location.href = 'https://deeplink-ashy.vercel.app/';
+    // local.hrefを確認
+    setInterval(() => {
+      console.log(hello);
+      if (location.href === 'https://deeplink-ashy.vercel.app/') {
+        window.close();
+      }
+    }, 1000);
     return
   }
   // 
