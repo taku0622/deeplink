@@ -10,14 +10,21 @@ const handleIOSDeepLink = () => {
   // 
   if (browser.name === 'Mobile Safari') {
     // リンクをクリック
-    location.href = 'https://deeplink-ashy.vercel.app/';
-    // local.hrefを確認
-    setInterval(() => {
-      console.log(hello);
-      if (location.href === 'https://deeplink-ashy.vercel.app/') {
-        location.href = 'https://apps.apple.com/jp/app/secom-sights/id6463053242';
-      }
-    }, 1000);
+    // window.open('https://deeplink-ashy.vercel.app/', "_blank");
+    var url = "https://deeplink-ashy.vercel.app/";
+    if (!window.open(url)) {
+      location.href = url;
+    } else {
+      location.href = url;
+      $('#open_form').submit();
+    }
+    // // local.hrefを確認
+    // setInterval(() => {
+    //   console.log(hello);
+    //   if (location.href === 'https://deeplink-ashy.vercel.app/') {
+    //     window.close();
+    //   }
+    // }, 1000);
     return
   }
   // 
