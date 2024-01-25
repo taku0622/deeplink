@@ -11,7 +11,7 @@ const handleIOSDeepLink = () => {
   if (browser.name === 'Mobile Safari') {
     // リンクをクリック
     const openedApp = window.open('https://view.secomsights.com/login', '_blank');
-    console.log(window);
+    console.log(window.getCurrent());
     console.log(document);
     console.log(history);
     // var url = "https://deeplink-ashy.vercel.app/";
