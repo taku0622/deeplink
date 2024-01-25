@@ -16,7 +16,7 @@ const handleIOSDeepLink = () => {
       location.href = url;
       alert('パターン1');
     } else {
-      location.href = url;
+      location.href = 'https://apps.apple.com/jp/app/secom-sights/id6463053242';
       $('#open_form').submit();
       alert('パターン2');
     }
