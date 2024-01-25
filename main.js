@@ -4,11 +4,11 @@ const ua = new UAParser();
 //ブラウザ情報取得
 const browser = ua.getBrowser();
 
-console.log(ua.os.name);
+console.log(browser.name);
 
 const handleIOSDeepLink = () => {
   // 
-  if (ua.browser.name === 'Mobile Safari') {
+  if (browser.name === 'Mobile Safari') {
     alert('Mobile Safari!!');
     return
   }
