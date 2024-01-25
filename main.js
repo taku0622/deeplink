@@ -4,7 +4,7 @@ const ua = new UAParser();
 //ブラウザ情報取得
 const browser = ua.getBrowser();
 
-console.log(ua.browser.name);
+console.log(ua.browser);
 
 const handleIOSDeepLink = () => {
   // 
