@@ -10,7 +10,10 @@ const handleIOSDeepLink = () => {
   // 
   if (browser.name === 'Mobile Safari') {
     // リンクをクリック
-    console.log(window.open('https://github.com/taku0622/deeplink', '_blank'));
+    window.open('https://github.com/taku0622/deeplink', '_blank');
+    if (window.onload()) {
+      console.log('oh');
+    }
     // var url = "https://deeplink-ashy.vercel.app/";
     // if (!window.open("https://apps.apple.com/jp/app/secom-sights/id6463053242")) {
     //   location.href = "https://apps.apple.com/jp/app/secom-sights/id6463053242";
