@@ -1,4 +1,10 @@
-console.log(UAParser)
+//宣言
+const ua = new UAParser();
+
+//ブラウザ情報取得
+const browser = ua.getBrowser();
+
+console.log(browser);
 
 const handleIOSDeepLink = () => {
   if (window.opener) {
