@@ -11,10 +11,7 @@ const handleIOSDeepLink = () => {
   if (browser.name === 'Mobile Safari') {
     // リンクをクリック
     const openedApp = window.open('https://view.secomsights.com/login', '_blank');
-    let gettingCurrent = browser.windows.getCurrent(
-      getInfo               // optional object
-    )
-    console.log(gettingCurrent);
+    console.log(window);
     console.log(document);
     console.log(history);
 
