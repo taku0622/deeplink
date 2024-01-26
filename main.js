@@ -11,10 +11,7 @@ const handleIOSDeepLink = () => {
   if (browser.name === 'Mobile Safari') {
     // リンクをクリック
     const openedApp = window.open('https://view.secomsights.com/login', '_blank');
-    console.log(window.open('https://view.secomsights.com/login', '_blank'));
-    console.log(openedApp);
-    console.log(!openedApp.closed);
-    if (openedApp && !openedApp.closed) {
+    if (openedApp) {
       // If the application is available, open it and close tab
       openedApp.close();
       location.href = 'https://apps.apple.com/jp/app/secom-sights/id6463053242';
