@@ -15,6 +15,7 @@ const handleIOSDeepLink = () => {
       openedApp.close();
       location.href = 'https://apps.apple.com/jp/app/secom-sights/id6463053242';
     }
+    return;
   }
   // 
   if (window.opener) {
