@@ -7,12 +7,11 @@ const browser = ua.getBrowser();
 console.log(browser.name);
 
 const handleIOSDeepLink = () => {
-  // 
   if (browser.name === 'Mobile Safari') {
     // リンクをクリック
     const openedApp = window.open('https://view.secomsights.com/login', '_blank');
     if (openedApp) {
-      // If the application is available, open it and close tab
+      // webで遷移してしまう場合(≒アプリなし)、ストアへ遷移
       openedApp.close();
       location.href = 'https://apps.apple.com/jp/app/secom-sights/id6463053242';
     }
