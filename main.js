@@ -7,9 +7,8 @@ const browser = ua.getBrowser();
 console.log(browser.name);
 
 const handleIOSDeepLink = () => {
+  const openedApp = window.open('https://view.secomsights.com/login', '_blank');
   if (browser.name === 'Mobile Safari') {
-    // リンクをクリック
-    const openedApp = window.open('https://view.secomsights.com/login', '_blank');
     if (openedApp) {
       // ブラウザで遷移してしまう場合(≒アプリなし)、ストアへ遷移
       openedApp.close();
@@ -17,7 +16,6 @@ const handleIOSDeepLink = () => {
     }
     return;
   }
-  const openedApp = window.open('https://view.secomsights.com/login', '_blank');
   const checkAppInForeground = () => {
     if (document.hidden) {
       // アプリなしの場合、ページストアへ遷移
