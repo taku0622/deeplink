@@ -8,6 +8,7 @@ console.log(browser.name);
 
 const handleIOSDeepLink = () => {
   const openedApp = window.open('https://view.secomsights.com/login', '_blank');
+  // safariのみ対応が異なるので分岐
   if (browser.name === 'Mobile Safari') {
     if (openedApp) {
       // ブラウザで遷移してしまう場合(≒アプリなし)、ストアへ遷移
@@ -16,6 +17,7 @@ const handleIOSDeepLink = () => {
     }
     return;
   }
+  // safari以外
   const checkAppInForeground = () => {
     if (document.hidden) {
       // アプリなしの場合、ページストアへ遷移
