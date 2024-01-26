@@ -11,13 +11,11 @@ const handleIOSDeepLink = () => {
   if (browser.name === 'Mobile Safari') {
     // リンクをクリック
     const openedApp = window.open('https://view.secomsights.com/login', '_blank');
-    console.log(window);
-    console.log(document.hidden);
-    console.log(document.activeElement);
-    console.log(document.hidden);
-    console.log(document.domain);
-    console.log(document.location);
-    console.log(document.URL);
+    if (openedApp && !openedApp.closed) {
+      // If the application is available, open it and close tab
+      openedApp.close();
+      location.href = 'https://apps.apple.com/jp/app/secom-sights/id6463053242';
+    }
 
 
     // var url = "https://deeplink-ashy.vercel.app/";
