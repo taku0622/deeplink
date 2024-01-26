@@ -12,8 +12,9 @@ const handleIOSDeepLink = () => {
     // リンクをクリック
     const openedApp = window.open('https://view.secomsights.com/login', '_blank');
     console.log(window);
-    console.log(document);
-    console.log(history);
+    console.log(document.hidden);
+    console.log(document.activeElement);
+    console.log(history.forward());
 
     // var url = "https://deeplink-ashy.vercel.app/";
     // if (!window.open("https://apps.apple.com/jp/app/secom-sights/id6463053242")) {
