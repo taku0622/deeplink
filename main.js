@@ -7,32 +7,23 @@ const browser = ua.getBrowser();
 console.log(browser.name);
 
 const handleIOSDeepLink = () => {
-  // if (browser.name === 'Mobile Safari') {
-  //   // リンクをクリック
-  //   const openedApp = window.open('https://view.secomsights.com/login', '_blank');
-  //   if (openedApp) {
-  //     // webで遷移してしまう場合(≒アプリなし)、ストアへ遷移
-  //     openedApp.close();
-  //     location.href = 'https://apps.apple.com/jp/app/secom-sights/id6463053242';
-  //   }
-  // }
+  if (browser.name === 'Mobile Safari') {
+    // リンクをクリック
+    const openedApp = window.open('https://view.secomsights.com/login', '_blank');
+    if (openedApp) {
+      // webで遷移してしまう場合(≒アプリなし)、ストアへ遷移
+      openedApp.close();
+      location.href = 'https://apps.apple.com/jp/app/secom-sights/id6463053242';
+    }
+  }
   const openedApp = window.open('https://view.secomsights.com/login', '_blank');
   const checkAppInForeground = () => {
-    if (browser.name === 'Mobile Safari') {
-      log(document.hidden);
-      if (openedApp) {
-        // webで遷移してしまう場合(≒アプリなし)、ストアへ遷移
-        openedApp.close();
-        location.href = 'https://apps.apple.com/jp/app/secom-sights/id6463053242';
-      }
-    } else {
-      if (document.hidden) {
-        // ストアへ遷移
-        location.href = 'https://apps.apple.com/jp/app/secom-sights/id6463053242';
-      } else if (openedApp && !openedApp.closed) {
-        // アプリが利用可能な場合、アプリを開いてタブを閉じる
-        openedApp.close();
-      }
+    if (document.hidden) {
+      // ストアへ遷移
+      location.href = 'https://apps.apple.com/jp/app/secom-sights/id6463053242';
+    } else if (openedApp && !openedApp.closed) {
+      // アプリが利用可能な場合、アプリを開いてタブを閉じます
+      openedApp.close();
     }
   };
   // アプリがフォアグラウンドにあるか100ミリ秒ごとに確認します
