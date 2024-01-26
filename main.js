@@ -18,18 +18,27 @@ const handleIOSDeepLink = () => {
   // }
   const openedApp = window.open('https://view.secomsights.com/login', '_blank');
   const checkAppInForeground = () => {
-    if (document.disabled) {
-      // Show App Store by URL
-      location.href = 'https://apps.apple.com/jp/app/secom-sights/id6463053242';
-    } else if (openedApp && !openedApp.closed) {
-      // If the application is available, open it and close tab
-      openedApp.close();
+    if (browser.name === 'Mobile Safari') {
+      log(document.hidden);
+      if (openedApp) {
+        // webで遷移してしまう場合(≒アプリなし)、ストアへ遷移
+        openedApp.close();
+        location.href = 'https://apps.apple.com/jp/app/secom-sights/id6463053242';
+      }
+    } else {
+      if (document.hidden) {
+        // ストアへ遷移
+        location.href = 'https://apps.apple.com/jp/app/secom-sights/id6463053242';
+      } else if (openedApp && !openedApp.closed) {
+        // アプリが利用可能な場合、アプリを開いてタブを閉じる
+        openedApp.close();
+      }
     }
   };
-  // Check if the app is in the foreground every 100 milliseconds
+  // アプリがフォアグラウンドにあるか100ミリ秒ごとに確認します
   const checkInterval = setInterval(checkAppInForeground, 100);
-  // Clear the interval after a certain duration
-  const timeoutDuration = 5000; // Adjust the duration as needed
+  // 一定時間経過後にインターバルを取り消す
+  const timeoutDuration = 5000; // 必要に応じて時間調整
   setTimeout(() => {
     clearInterval(checkInterval);
   }, timeoutDuration);
