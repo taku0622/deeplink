@@ -11,28 +11,14 @@ const handleIOSDeepLink = () => {
   if (browser.name === 'Mobile Safari') {
     // リンクをクリック
     const openedApp = window.open('https://view.secomsights.com/login', '_blank');
+    console.log(window.open('https://view.secomsights.com/login', '_blank'));
+    console.log(openedApp);
+    console.log(!openedApp.closed);
     if (openedApp && !openedApp.closed) {
       // If the application is available, open it and close tab
       openedApp.close();
       location.href = 'https://apps.apple.com/jp/app/secom-sights/id6463053242';
     }
-
-
-    // var url = "https://deeplink-ashy.vercel.app/";
-    // if (!window.open("https://apps.apple.com/jp/app/secom-sights/id6463053242")) {
-    //   location.href = "https://apps.apple.com/jp/app/secom-sights/id6463053242";
-    //   if (location.href === "https://apps.apple.com/jp/app/secom-sights/id6463053242") {
-    //     alert()
-    //   }
-    // }
-    // // local.hrefを確認
-    // setInterval(() => {
-    //   console.log(hello);
-    //   if (location.href === 'https://deeplink-ashy.vercel.app/') {
-    //     window.close();
-    //   }
-    // }, 1000);
-    return
   }
   // 
   if (window.opener) {
