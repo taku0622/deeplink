@@ -7,25 +7,18 @@ const browser = ua.getBrowser();
 console.log(browser.name);
 
 const handleIOSDeepLink = () => {
-  if (browser.name === 'Mobile Safari') {
-    // リンクをクリック
-    const openedApp = window.open('https://view.secomsights.com/login', '_blank');
-    if (openedApp) {
-      // webで遷移してしまう場合(≒アプリなし)、ストアへ遷移
-      openedApp.close();
-      location.href = 'https://apps.apple.com/jp/app/secom-sights/id6463053242';
-    }
-    return;
-  }
-  // 
-  if (window.opener) {
-    // Check if the page was opened by another app (e.g. Gmail, Teams)
-    window.close();
-    return;
-  }
+  // if (browser.name === 'Mobile Safari') {
+  //   // リンクをクリック
+  //   const openedApp = window.open('https://view.secomsights.com/login', '_blank');
+  //   if (openedApp) {
+  //     // webで遷移してしまう場合(≒アプリなし)、ストアへ遷移
+  //     openedApp.close();
+  //     location.href = 'https://apps.apple.com/jp/app/secom-sights/id6463053242';
+  //   }
+  // }
   const openedApp = window.open('https://view.secomsights.com/login', '_blank');
   const checkAppInForeground = () => {
-    if (document.hidden) {
+    if (document.hidden || document.addEventListener("visibilitychange")) {
       // Show App Store by URL
       location.href = 'https://apps.apple.com/jp/app/secom-sights/id6463053242';
     } else if (openedApp && !openedApp.closed) {
