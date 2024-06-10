@@ -35,3 +35,5 @@ const handleIOSDeepLink = () => {
     clearInterval(checkInterval);
   }, timeoutDuration);
 };
+
+location.href = "https://taku0622.github.io/jekyll3/";
