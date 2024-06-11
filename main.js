@@ -36,4 +36,4 @@ const handleIOSDeepLink = () => {
   }, timeoutDuration);
 };
 
-location.href = "https://view.secomsights.com/login";
+location.href = "http://192.168.11.6:8000/invitation-sign-up/f3ee5178-fb31-4d27-97a6-aaad4d1e7a25"
